@@ -12,7 +12,7 @@ create table user(
 	on delete cascade on update cascade
 );
 
-create table role (
+create table role(
 	id int not null auto_increment,
 	user_id int not null,
 	name varchar(10) not null,
@@ -24,10 +24,10 @@ create table role (
 create table statistics(
 	id int not null auto_increment,
 	user_id int not null,
-	login datetime not null
-	logout datetime not null
-	create_query datetime not null
-	primary key(id);
+	login datetime not null,
+	logout datetime not null,
+	create_query datetime not null,
+	primary key(id),
 	foreign key(user_id) references user(id)
 	on delete cascade on update cascade
 );
